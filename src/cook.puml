@@ -1,0 +1,27 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+interface Chef{
+    + PrepareFood():void
+    + CookFood():void
+    + AssignChief(String):void
+}
+
+class ChefAdapter{
+    + LineCook
+    + PrepareFood():void
+    + CookFood():void
+    + AssignChief(String):void
+}
+
+class LineCook{
+    + ChopFood():void
+    + HeatFood():void
+    + AssignLineCook(String):void
+}
+
+Client --> Chef
+ChefAdapter ..> Chef
+ChefAdapter -->LineCook
+
+@enduml
